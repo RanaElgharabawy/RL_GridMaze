@@ -1,0 +1,4 @@
+gymnasium==1.4.0
+pygame==2.6.1
+numpy==2.5.4
+moviepy==2.2.1
