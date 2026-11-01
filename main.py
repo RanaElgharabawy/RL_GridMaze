@@ -13,7 +13,8 @@ class SmoothRecordVideo(RecordVideo):
     def _capture_frame(self):
         super()._capture_frame()  # renders and stores one frame, like normal
         if self.recording and self.recorded_frames:
-            self.recorded_frames.extend([self.recorded_frames[-1]] * (self.repeat - 1))
+            n = self.repeat * 3 if len(self.recorded_frames) == 1 else self.repeat
+            self.recorded_frames.extend([self.recorded_frames[-1]] * (n - 1))
 
 
 N_EPISODES = 10
